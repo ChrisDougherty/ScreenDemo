@@ -1,6 +1,6 @@
-import React from 'react';
-import Options from './screens/options'
+import React from "react";
+import Navigation from "./screens/Navigation";
 
-export default  () => {
-    return <Options/>;
+export default () => {
+  return <Navigation />;
 };
