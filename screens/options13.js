@@ -6,10 +6,10 @@ import {
   StyleSheet,
   TouchableHighlight,
   Linking,
+  Image,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { RowSeperator, RowItem } from "../components/RowSeperator.js";
-import Navigation from "./Navigation.js";
 
 const styles = StyleSheet.create({
   text: {
@@ -28,28 +28,30 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginRight: 20,
   },
+  img: {
+    width: 500,
+    height: 400,
+    paddingHorizontal: 100,
+  },
 });
 
 export default ({ navigation }) => {
   return (
     <SafeAreaView>
       <Text style={styles.text}>
-        You see a ship on the horizon, you have a flare gun you could use to
-        alert them or you can take off your shirt and wave it around. Which do
-        you do?
+        You stumble into the base only to discover it is a North Korean base and
+        you're shot on sight.
       </Text>
-      <RowItem
-        title="Flare Gun"
-        icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Flare")}
+      <Image
+        style={styles.img}
+        source={{
+          uri: "https://img.dtnext.in/Articles/2021/Dec/202112171304390639_North-Korea-bans-laughing-drinking-on-Kim-Jongils-10th_SECVPF.gif",
+        }}
       />
-
-      <RowSeperator />
-
       <RowItem
-        title="Use your shirt"
+        title="Play again?"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Shirt")}
+        onPress={() => navigation.push("The Island")}
       />
     </SafeAreaView>
   );

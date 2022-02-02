@@ -6,10 +6,10 @@ import {
   StyleSheet,
   TouchableHighlight,
   Linking,
+  Image,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { RowSeperator, RowItem } from "../components/RowSeperator.js";
-import Navigation from "./Navigation.js";
 
 const styles = StyleSheet.create({
   text: {
@@ -28,28 +28,30 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginRight: 20,
   },
+  img: {
+    width: 500,
+    height: 700,
+  },
 });
 
 export default ({ navigation }) => {
   return (
     <SafeAreaView>
       <Text style={styles.text}>
-        You see a ship on the horizon, you have a flare gun you could use to
-        alert them or you can take off your shirt and wave it around. Which do
-        you do?
+        You try to fight them but are quickly overwhelmed, they have the numbers
+        advantage and you can't fight to save your life, literally. So you are
+        taken back to their camp and where you are burned alive.
       </Text>
       <RowItem
-        title="Flare Gun"
+        title="Play again?"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Flare")}
+        onPress={() => navigation.push("The Island")}
       />
-
-      <RowSeperator />
-
-      <RowItem
-        title="Use your shirt"
-        icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Shirt")}
+      <Image
+        style={styles.img}
+        source={{
+          uri: "https://cdn.w600.comps.canstockphoto.com/martial-arts-fighter-stock-images_csp25836753.jpg",
+        }}
       />
     </SafeAreaView>
   );

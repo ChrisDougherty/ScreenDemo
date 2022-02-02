@@ -6,10 +6,10 @@ import {
   StyleSheet,
   TouchableHighlight,
   Linking,
+  Image,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { RowSeperator, RowItem } from "../components/RowSeperator.js";
-import Navigation from "./Navigation.js";
 
 const styles = StyleSheet.create({
   text: {
@@ -28,28 +28,32 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginRight: 20,
   },
+  img: {
+    width: 500,
+    height: 600,
+    paddingHorizontal: 100,
+  },
 });
 
 export default ({ navigation }) => {
   return (
     <SafeAreaView>
       <Text style={styles.text}>
-        You see a ship on the horizon, you have a flare gun you could use to
-        alert them or you can take off your shirt and wave it around. Which do
-        you do?
+        You walk for miles but eventually you here the sound of people and
+        machinery. You start running and realize you've come across a military
+        base. You are greeted by concerned soldiers who tend to you and you're
+        sent on the next ship back to your home.
       </Text>
-      <RowItem
-        title="Flare Gun"
-        icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Flare")}
+      <Image
+        style={styles.img}
+        source={{
+          uri: "https://friendlystock.com/wp-content/uploads/2018/09/7-dabbing-soldier-character-vector-cartoon-clipart.jpg",
+        }}
       />
-
-      <RowSeperator />
-
       <RowItem
-        title="Use your shirt"
+        title="Play again?"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Shirt")}
+        onPress={() => navigation.push("The Island")}
       />
     </SafeAreaView>
   );

@@ -13,7 +13,7 @@ import Navigation from "./Navigation.js";
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 45,
+    fontSize: 20,
     paddingHorizontal: 15,
     margin: 15,
   },
@@ -30,21 +30,21 @@ const styles = StyleSheet.create({
   },
 });
 const openURL = (url) => {
-  Linking.openURL(url).catch(alert("There was an error!"));
+  Linking.openURL(url);
 };
 
-export default ({ navigator }) => {
+export default ({ navigation }) => {
   return (
     <SafeAreaView>
-      <Text>
+      <Text style={styles.text}>
         You wake up on an island by yourself with no possesions. You determine
         you can either wait on the beach or try and get through the dense forest
-        that covers the island.
+        that covers the island. What do you do?
       </Text>
       <RowItem
         title="Stay on the beach"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => openURL("https://chrisdougherty.github.io/")}
+        onPress={() => navigation.push("The Beach")}
       />
 
       <RowSeperator />
@@ -52,7 +52,7 @@ export default ({ navigator }) => {
       <RowItem
         title="Enter the forest"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigator.push("Options2")}
+        onPress={() => navigation.push("The Forest")}
       />
     </SafeAreaView>
   );

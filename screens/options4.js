@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { RowSeperator, RowItem } from "../components/RowSeperator.js";
-import Navigation from "./Navigation.js";
 
 const styles = StyleSheet.create({
   text: {
@@ -34,22 +33,24 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView>
       <Text style={styles.text}>
-        You see a ship on the horizon, you have a flare gun you could use to
-        alert them or you can take off your shirt and wave it around. Which do
-        you do?
+        You shoot the flare into the air, the boat sees it and sends a rescue
+        team. You're saved, they take you in and you are on the way home.
+        However, you realize they are scientologists, logically you're only
+        options are to jump overboard to inveitable death or to join them. What
+        will you do?
       </Text>
       <RowItem
-        title="Flare Gun"
+        title="Jump overboard"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Flare")}
+        onPress={() => navigation.push("Overboard")}
       />
 
       <RowSeperator />
 
       <RowItem
-        title="Use your shirt"
+        title="Join the scientologists"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Shirt")}
+        onPress={() => navigation.push("Scientology")}
       />
     </SafeAreaView>
   );

@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { RowSeperator, RowItem } from "../components/RowSeperator.js";
-import Navigation from "./Navigation.js";
 
 const styles = StyleSheet.create({
   text: {
@@ -34,22 +33,22 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView>
       <Text style={styles.text}>
-        You see a ship on the horizon, you have a flare gun you could use to
-        alert them or you can take off your shirt and wave it around. Which do
-        you do?
+        You enter the dense forest, there are nothing but trees until you enter
+        a small clearing. You see a clown mask and pick it up. You can either
+        continue down the path or through the forest.
       </Text>
       <RowItem
-        title="Flare Gun"
+        title="Down the path"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Flare")}
+        onPress={() => navigation.push("The Path")}
       />
 
       <RowSeperator />
 
       <RowItem
-        title="Use your shirt"
+        title="Continue through the forest"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Shirt")}
+        onPress={() => navigation.push("Forest2")}
       />
     </SafeAreaView>
   );

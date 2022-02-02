@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { RowSeperator, RowItem } from "../components/RowSeperator.js";
-import Navigation from "./Navigation.js";
 
 const styles = StyleSheet.create({
   text: {
@@ -34,22 +33,22 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView>
       <Text style={styles.text}>
-        You see a ship on the horizon, you have a flare gun you could use to
-        alert them or you can take off your shirt and wave it around. Which do
-        you do?
+        You continue through the forest and climb upon a hill just above the
+        trees. You see what looks to be a military base, but don't know whose.
+        Do you continue towards it or turn back to the path?
       </Text>
       <RowItem
-        title="Flare Gun"
+        title="To the base"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Flare")}
+        onPress={() => navigation.push("Base")}
       />
 
       <RowSeperator />
 
       <RowItem
-        title="Use your shirt"
+        title="Back to the path"
         icon={<Entypo name="arrow-right" size={24} color="black" />}
-        onPress={() => navigation.push("Shirt")}
+        onPress={() => navigation.push("The Path")}
       />
     </SafeAreaView>
   );
